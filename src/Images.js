@@ -19,5 +19,6 @@ const Images = {
   Pathway4: "./images/pathway4.png",
   Pathway1: "./images/pathway1.webp",
   Pathway2: "./images/pathway2.webp",
+  AminOfiice: "./images/adminOffice.webp",
 };
 export default Images;

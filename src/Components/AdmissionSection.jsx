@@ -1,5 +1,6 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
+import Images from '../Images';
 
 const Section = tw.div`relative flex  justify-center h-[400px] bg-cover bg-center`;
 const Overlay = tw.div`absolute inset-0 bg-black bg-opacity-30`;
@@ -10,7 +11,7 @@ const Info = tw.p`mb-1 text-gray-600`;
 
 const AdmissionSection = () => {
     return (
-        <Section style={{ backgroundImage: "url('../Images/adminOffice.webp')" }}>
+        <Section style={{ backgroundImage: `url(${Images.AminOfiice})` }}>
             <Overlay />
             <Content>
                 <Title>ADMISSION OFFICE</Title>
