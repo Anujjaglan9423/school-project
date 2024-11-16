@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home-carousel .swiper {
+  width: 100%;
+  height: 100%;
+  overflow: visible !important;
+
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
