@@ -4,8 +4,10 @@ import * as Yup from "yup";
 import tw from "tailwind-styled-components";
 import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
+import { toast } from "react-toastify";
+import emailjs from "emailjs-com";
 
-const Container = tw.div`max-w-4xl mx-auto bg-white p-8 shadow-md rounded-lg mt-24`;
+const Container = tw.div`max-w-4xl mx-auto bg-white p-8 shadow-md rounded-lg my-24`;
 const Title = tw.h2`text-3xl font-semibold text-red-600 `;
 const Label = tw.label`block text-sm font-medium text-gray-700 mt-4`;
 const Input = tw(Field)`mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2`;
@@ -39,7 +41,36 @@ const validationSchema = Yup.object({
 });
 
 const EnquiryForm = () => {
-    const handleSubmit = (values) => {
+    const handleSubmit = (values, { setSubmitting, resetForm }) => {
+        emailjs
+            .send(
+                "service_407t9oe", // Replace with your EmailJS service ID
+                "template_q680p6f", // Replace with your EmailJS template ID
+                {
+                    enquiryYear: values.enquiryYear,
+                    classApplied: values.classApplied,
+                    studentName: values.studentName,
+                    parentName: values.parentName,
+                    gender: values.gender,
+                    dob: values.dob,
+                    email: values.email,
+                    mobile: values.mobile,
+                    address: values.address,
+                    schoolName: values.schoolName,
+                },
+                "Zr4YTfAHKDO3Te4ph" // Replace with your EmailJS user ID
+            )
+            .then(
+                (result) => {
+                    toast.success("Message sent successfully!");
+                    setSubmitting(false);
+                    resetForm()
+                },
+                (error) => {
+                    toast.error("Failed to send the message, please try again.");
+                    setSubmitting(false);
+                }
+            );
         console.log(values);
     };
 
@@ -50,7 +81,7 @@ const EnquiryForm = () => {
                 validationSchema={validationSchema}
                 onSubmit={handleSubmit}
             >
-                {({ values, handleChange }) => (
+                {({ isSubmitting }) => (
                     <Form>
                         <Title>Enquiry Details</Title>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -69,6 +100,17 @@ const EnquiryForm = () => {
                                     <MenuItem value="">Class Applying For</MenuItem>
                                     <MenuItem value="Nursery">Nursery</MenuItem>
                                     <MenuItem value="Grade 1">Grade 1</MenuItem>
+                                    <MenuItem value="Grade 2">Grade 2</MenuItem>
+                                    <MenuItem value="Grade 3">Grade 3</MenuItem>
+                                    <MenuItem value="Grade 4">Grade 4</MenuItem>
+                                    <MenuItem value="Grade 5">Grade 5</MenuItem>
+                                    <MenuItem value="Grade 6">Grade 6</MenuItem>
+                                    <MenuItem value="Grade 7">Grade 7</MenuItem>
+                                    <MenuItem value="Grade 8">Grade 8</MenuItem>
+                                    <MenuItem value="Grade 9">Grade 9</MenuItem>
+                                    <MenuItem value="Grade 10">Grade 10</MenuItem>
+                                    <MenuItem value="Grade 11">Grade 11</MenuItem>
+                                    <MenuItem value="Grade 12">Grade 12</MenuItem>
                                 </Field>
                                 <ErrorMessage name="classApplied" component={ErrorText} />
                             </div>
@@ -122,7 +164,7 @@ const EnquiryForm = () => {
                                 <ErrorMessage name="address" component={ErrorText} />
                             </div>
                         </div>
-                        <Button type="submit">Submit Application</Button>
+                        <Button type="submit" disabled={isSubmitting}> {isSubmitting ? "Sending..." : "Submit Appllication"}</Button>
                     </Form>
                 )}
             </Formik>
