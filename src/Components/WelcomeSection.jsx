@@ -24,7 +24,7 @@ const WelcomeSection = () => {
 
 
 const SectionWrapper = tw.div`flex items-center justify-center relative`;
-const ContentWrapper = tw.div`text-center md:p-32 p-20 bg-white bg-opacity-80  mx-auto `;
+const ContentWrapper = tw.div`text-center md:p-32 py-20 px-10 bg-white bg-opacity-80  mx-auto `;
 const Title = tw.h1`text-3xl md:text-4xl font-bold text-red-600 mb-4 uppercase`;
 const Subtitle = tw.p`text-xl md:text-2xl italic font-serif text-gray-700 mb-4`;
 const Tagline = tw.p`text-lg text-red-500 font-medium tracking-wider uppercase mb-6`;

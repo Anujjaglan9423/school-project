@@ -9,7 +9,7 @@ const Title = tw.h1`text-6xl lg:text-8xl font-bold tracking-wide opacity-80 font
 const Subtitle = tw.h2`mt-4 text-2xl font-semibold`;
 const Description = tw.p`mt-2 text-lg max-w-2xl`;
 
-const AboutHero = () => {
+const ContactHero = () => {
     return (
         <HeroSectionWrapper
             style={{ backgroundImage: `url('../images/MainImage.jpg')` }}
@@ -17,7 +17,7 @@ const AboutHero = () => {
             <Overlay />
             <ContentContainer>
                 <Title>
-                    DISCOVER <br /> JAY
+                    Contact Us
                 </Title>
                 <Subtitle>WELCOME TO JAY</Subtitle>
                 <Description>
@@ -29,4 +29,4 @@ const AboutHero = () => {
     );
 };
 
-export default AboutHero;
+export default ContactHero;

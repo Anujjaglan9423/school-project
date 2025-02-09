@@ -15,7 +15,7 @@ const MissionVisionSection = () => {
             <Container>
                 <Title>Our Mission & Vision</Title>
                 <ContentWrapper>
-                    {/* Mission Card */}
+
                     <Card>
                         <CardTitle>Our Mission</CardTitle>
                         <Text>

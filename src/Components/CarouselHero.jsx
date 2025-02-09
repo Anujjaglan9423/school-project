@@ -45,7 +45,6 @@ const CarouselContainer = ({ data }) => {
     return (
         <SwiperGroup className="home-carousel">
             <Swiper
-                className="h-screen"
                 spaceBetween={30}
                 centeredSlides={true}
                 modules={[Navigation, Autoplay, Pagination]}
@@ -63,7 +62,7 @@ const CarouselContainer = ({ data }) => {
                     return (
                         <SwiperSlide
                             key={id}
-                            tw="relative h-screen border-2 border-blue-500"
+                            tw="relative border-2 border-blue-500"
                         >
                             <Image src={img} alt={name} />
                             <OverlayBackground />
@@ -81,11 +80,11 @@ const CarouselContainer = ({ data }) => {
 };
 
 const ImageWrapper = tw.div`w-full h-full`;
-const SwiperGroup = tw.div` h-full overflow-hidden shadow-xl mx-auto w-full h-full`;
-const Image = tw.img`cursor-pointer object-cover w-full h-full`;
+const SwiperGroup = tw.div`overflow-hidden shadow-xl mx-auto w-full`;
+const Image = tw.img`cursor-pointer object-contain md:object-cover w-full h-full md:h-[90vh]`;
 const TextOverlay = tw.div`  md:absolute md:top-1/2 md:left-0 md:w-full md:h-full px-10 transform -translate-y-32 `;
 const OverlayTitle = tw.h2`text-lg md:text-2xl md:w-10/12  lg:w-7/12 text-white md:leading-tight`;
 const OverlayText = tw.p`text-sm md:text-base mt-2 text-white md:w-10/12 lg:w-6/12 leading-relaxed`;
 const OverlayHeading = tw.h1`text-xl md:text-6xl md:w-10/12 lg:w-7/12 text-white md:leading-tight font-semibold`;
-const OverlayBackground = tw.div`absolute left-0 bottom-0 right-0 top-50 w-1/2 h-full bg-gradient-to-r from-black via-black to-transparent opacity-90`;
+const OverlayBackground = tw.div`absolute left-0 bottom-0 right-0 top-50 w-1/2 h-full bg-gradient-to-r from-gray-800 via-gray-900 to-transparent opacity-90`;
 export default CarouselHero;

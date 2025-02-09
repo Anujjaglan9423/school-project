@@ -18,7 +18,6 @@ const AdmissionSection = () => {
                 <Info>8 am to 3 pm, Monday to Saturday</Info>
                 <Info>+91-9053100557, +91-9053200557</Info>
                 <Info>jayinternational1@gmail.com</Info>
-
             </Content>
         </Section>
     );

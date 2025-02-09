@@ -1,15 +1,17 @@
 import React from "react";
 import Foooter from "../Components/Footer";
-import ContactForm from "../Components/ContactForm";
 import AdmissionSection from "../Components/AdmissionSection";
+import FeeStructures from "../Components/FeeStructures";
+import AdmissionGuidelines from "../Components/AdmissionGuidlines";
 import QuickAction from "../Components/QuickAction";
-import ContactHero from "../Components/ContactHero";
+import FeeHero from "../Components/FeeHero";
 
-const ContactUs = () => {
+const FeeStucture = () => {
   return (
     <div className="bg-gray-100">
-      <ContactHero />
-      <ContactForm />
+      <FeeHero />
+      <AdmissionGuidelines />
+      <FeeStructures />
       <QuickAction />
       <AdmissionSection />
       <Foooter />
@@ -17,4 +19,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;
+export default FeeStucture;

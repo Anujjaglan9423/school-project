@@ -20,5 +20,6 @@ const Images = {
   Pathway1: "./images/pathway1.webp",
   Pathway2: "./images/pathway2.webp",
   AminOfiice: "./images/adminOffice.webp",
+  LoginBg: ",/images/logo26.jpg",
 };
 export default Images;

@@ -8,7 +8,7 @@ import AdmissionSection from "../Components/AdmissionSection";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-gray-100">
       <CarouselHero />
       <WelcomeSection />
       <LifeAtJay />

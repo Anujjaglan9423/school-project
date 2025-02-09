@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'tailwind-styled-components';
+import tw from 'tailwind-styled-components';
 
-const AboutSection = styled.div`bg-white py-12 px-6`;
-const Title = styled.h1`text-3xl font-bold text-red-600 mb-6`;
-const Paragraph = styled.p`text-gray-700 leading-relaxed mb-4`;
+const AboutSection = tw.div`bg-white py-12 px-6`;
+const Title = tw.h1`text-3xl font-bold text-red-600 mb-6`;
+const Paragraph = tw.p`text-gray-700 leading-relaxed mb-4`;
 
 const AboutText = () => {
     return (

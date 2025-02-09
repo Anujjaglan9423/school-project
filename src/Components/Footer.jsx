@@ -1,15 +1,15 @@
 import React from 'react';
-import styled from 'tailwind-styled-components';
+import tw from 'tailwind-styled-components';
 import { FaFacebookF, FaInstagram, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-const FooterWrapper = styled.div`bg-gray-900 text-white py-10 px-5 px-6`;
-const FooterContainer = styled.div`flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-10 lg:space-y-0`;
-const AddressSection = styled.div`flex flex-col space-y-5`;
-const SchoolAddress = styled.div`text-gray-300`;
-const KeyLinks = styled.div`flex flex-col space-y-2`;
-const FooterLink = styled(Link)`text-gray-400 hover:text-white cursor-pointer`;
-const FooterButton = styled(Link)`bg-red-600 text-white py-2 px-4 rounded-full font-bold hover:bg-red-700`;
+const FooterWrapper = tw.div`bg-gray-900 text-white py-10 px-5 px-6`;
+const FooterContainer = tw.div`flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-10 lg:space-y-0`;
+const AddressSection = tw.div`flex flex-col space-y-5`;
+const SchoolAddress = tw.div`text-gray-300`;
+const KeyLinks = tw.div`flex flex-col space-y-2`;
+const FooterLink = tw(Link)`text-gray-400 hover:text-white cursor-pointer`;
+const FooterButton = tw(Link)`bg-red-600 text-white py-2 px-4 rounded-full font-bold hover:bg-red-700`;
 
 const Footer = () => {
     return (
@@ -22,7 +22,6 @@ const Footer = () => {
                 {/* Address Section */}
                 <AddressSection>
                     <h2 className="text-red-500 font-bold text-lg">Address</h2>
-
                     <SchoolAddress>
                         <h3 className="font-semibold">JAY INTERNATIONAL SCHOOL</h3>
                         <p>VPO. Jondhan Kalan, Israna, Panipat - 132103</p>
@@ -46,6 +45,8 @@ const Footer = () => {
                     <h2 className="text-red-500 font-bold text-lg">Key Links</h2>
                     <FooterLink to="/about-us">About Us</FooterLink>
                     <FooterLink to="/contact-us">Contact Us</FooterLink>
+                    <FooterLink to="/fee-structure">Fee Structure</FooterLink>
+                    <FooterLink to="/enquiry">Enquiry</FooterLink>
                 </KeyLinks>
             </FooterContainer>
 
